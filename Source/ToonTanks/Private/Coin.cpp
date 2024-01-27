@@ -45,7 +45,10 @@ void ACoin::BeginPlay()
 {
 	Super::BeginPlay();
 
+	//BoxComponent->OnComponentHit.AddDynamic(this, &ACoin::OnHit); 
 
+
+	BoxComponent->OnComponentBeginOverlap.AddDynamic(this, &ACoin::OnBoxBeginOverlap);
 	
 }
 
@@ -54,18 +57,7 @@ void ACoin::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	CoinRotation = GetActorRotation();
-
-	RotationRate = RotationRate + 10;
-
-	CoinRotation.Yaw = CoinRotation.Yaw * RotationRate * DeltaTime;
-
-	NewRotation = CoinRotation;
-
-	SetActorRotation(NewRotation);
-
-
-	DebugMessage();
+	RotateCoin(); 
 
 
 }
@@ -81,8 +73,37 @@ void ACoin::RotateCoin() {
 
 	
 
+	CoinRotation = FRotator::ZeroRotator;
 
-	DebugMessage(); 
+	RotationRate = 10.f;
+
+	float RotationSpeed = 10.f;
+
+
+	CoinRotation.Yaw = TimeDelta * RotationRate * RotationSpeed;
+
+	AddActorLocalRotation(CoinRotation, true);
 
 }
 
+void ACoin::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) {
+
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Magenta, TEXT("Collision is working")); 
+	}
+	Destroy();
+}
+
+
+void ACoin::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
+	if (GEngine) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Magenta, TEXT("Coin collision is working"));
+	}
+
+	FVector CoinLocation = GetActorLocation(); 
+
+	UGameplayStatics::PlaySoundAtLocation(this, CoinSound, CoinLocation); 
+
+
+	Destroy();
+}
