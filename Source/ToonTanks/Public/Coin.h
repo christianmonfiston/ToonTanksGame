@@ -54,5 +54,23 @@ public:
 	UFUNCTION()
 		void DebugMessage(); 
 
+public: 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		FRotator CoinRotation;
+
+public: 
+
+	UFUNCTION()
+		void RotateCoin(); 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float RotationRate = 10.f; 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		FRotator NewRotation; 
+
+	UPROPERTY(EditANywhere, BlueprintReadWrite)
+		float TimeDelta = UGameplayStatics::GetWorldDeltaSeconds(this); 
 	
 };

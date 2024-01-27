@@ -54,13 +54,35 @@ void ACoin::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	CoinRotation = GetActorRotation();
+
+	RotationRate = RotationRate + 10;
+
+	CoinRotation.Yaw = CoinRotation.Yaw * RotationRate * DeltaTime;
+
+	NewRotation = CoinRotation;
+
+	SetActorRotation(NewRotation);
+
+
+	DebugMessage();
+
 
 }
 
 void ACoin::DebugMessage() {
 
 	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Emerald, TEXT("Coin class is working")); 
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Emerald, TEXT("Rotation is working")); 
 	}
+}
+
+void ACoin::RotateCoin() {
+
+	
+
+
+	DebugMessage(); 
+
 }
 

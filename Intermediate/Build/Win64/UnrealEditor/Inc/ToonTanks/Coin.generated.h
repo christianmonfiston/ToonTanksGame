@@ -16,11 +16,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_31_SPARSE_DATA
 #define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_31_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execRotateCoin); \
 	DECLARE_FUNCTION(execDebugMessage);
 
 
 #define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execRotateCoin); \
 	DECLARE_FUNCTION(execDebugMessage);
 
 
