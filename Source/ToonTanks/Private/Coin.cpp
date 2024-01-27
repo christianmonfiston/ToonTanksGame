@@ -101,7 +101,6 @@ void ACoin::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other
 	}
 
 	FVector CoinLocation = GetActorLocation(); 
-
 	UGameplayStatics::PlaySoundAtLocation(this, CoinSound, CoinLocation); 
 
 

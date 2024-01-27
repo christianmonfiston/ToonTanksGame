@@ -81,11 +81,12 @@ void ATank::Tick(float DeltaTime) {
 
 	 VisualizeActor = GetActorLocation(); 
 
-	 ProjectileTesting->Testing();
+	// ProjectileTesting->Testing();
 
 
 
 }
+
 
 void ATank::Debug() {
 	if (GEngine) {
@@ -155,14 +156,16 @@ void ATank::Fire() {
 	FVector Location = ProjectileSpawnPoint->GetComponentLocation();
 	FRotator Rotation = ProjectileSpawnPoint->GetComponentRotation();
 
+	FVector ProjectileCurrentLocation = GetActorLocation(); 
 	
 	UGameplayStatics::PlaySoundAtLocation(this, ProjectileSound, Location); 
 
 
 	GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation);
 
-	UGameplayStatics::SpawnEmitterAtLocation(this, ProjectileTrail, Location);
+	//UGameplayStatics::SpawnEmitterAtLocation(this, ProjectileTrail, Location);
 	
+	//UGameplayStatics::SpawnEmitterAtLocation(this, ProjectileTrail, ProjectileCurrentLocation); 
 }
 
 void ATank::DrawLine() {
@@ -217,7 +220,7 @@ void ATank::ActorSpawn() {
 void ATank::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
 
 	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Collision is Working"));
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Tank is overlapping"));
 	}
 }
 

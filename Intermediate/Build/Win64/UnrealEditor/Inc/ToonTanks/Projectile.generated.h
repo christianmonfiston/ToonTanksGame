@@ -19,7 +19,6 @@ struct FHitResult;
 #define FID_ToonTanks_Source_ToonTanks_Projectile_h_28_SPARSE_DATA
 #define FID_ToonTanks_Source_ToonTanks_Projectile_h_28_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execcheckCollision); \
 	DECLARE_FUNCTION(execOnHit); \
 	DECLARE_FUNCTION(execShootProjectile); \
 	DECLARE_FUNCTION(execTesting);
@@ -27,7 +26,6 @@ struct FHitResult;
 
 #define FID_ToonTanks_Source_ToonTanks_Projectile_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execcheckCollision); \
 	DECLARE_FUNCTION(execOnHit); \
 	DECLARE_FUNCTION(execShootProjectile); \
 	DECLARE_FUNCTION(execTesting);

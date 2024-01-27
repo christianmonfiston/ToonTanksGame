@@ -49,11 +49,12 @@ public:
 	UFUNCTION()
 		void Testing(); 
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		AProjectile* Projectile;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UBoxComponent* BoxComponent; 
+
 
 
 public:  
@@ -75,8 +76,4 @@ public:
 	UPROPERTY(VisibleAnywhere)
 		float Time; 
 
-public: 
-
-	UFUNCTION()
-	bool checkCollision(); 
 };

@@ -22,13 +22,6 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 	ENGINE_API UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 // End Cross Module References
-	DEFINE_FUNCTION(AProjectile::execcheckCollision)
-	{
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		*(bool*)Z_Param__Result=P_THIS->checkCollision();
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(AProjectile::execOnHit)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_HitComp);
@@ -59,49 +52,11 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 	{
 		UClass* Class = AProjectile::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "checkCollision", &AProjectile::execcheckCollision },
 			{ "OnHit", &AProjectile::execOnHit },
 			{ "ShootProjectile", &AProjectile::execShootProjectile },
 			{ "Testing", &AProjectile::execTesting },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_AProjectile_checkCollision_Statics
-	{
-		struct Projectile_eventcheckCollision_Parms
-		{
-			bool ReturnValue;
-		};
-		static void NewProp_ReturnValue_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	void Z_Construct_UFunction_AProjectile_checkCollision_Statics::NewProp_ReturnValue_SetBit(void* Obj)
-	{
-		((Projectile_eventcheckCollision_Parms*)Obj)->ReturnValue = 1;
-	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AProjectile_checkCollision_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(Projectile_eventcheckCollision_Parms), &Z_Construct_UFunction_AProjectile_checkCollision_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AProjectile_checkCollision_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AProjectile_checkCollision_Statics::NewProp_ReturnValue,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AProjectile_checkCollision_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Projectile.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AProjectile_checkCollision_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AProjectile, nullptr, "checkCollision", nullptr, nullptr, sizeof(Z_Construct_UFunction_AProjectile_checkCollision_Statics::Projectile_eventcheckCollision_Parms), Z_Construct_UFunction_AProjectile_checkCollision_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectile_checkCollision_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AProjectile_checkCollision_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectile_checkCollision_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AProjectile_checkCollision()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AProjectile_checkCollision_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AProjectile_OnHit_Statics
 	{
@@ -264,7 +219,6 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ToonTanks,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AProjectile_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AProjectile_checkCollision, "checkCollision" }, // 677488105
 		{ &Z_Construct_UFunction_AProjectile_OnHit, "OnHit" }, // 3333054740
 		{ &Z_Construct_UFunction_AProjectile_ShootProjectile, "ShootProjectile" }, // 3035785435
 		{ &Z_Construct_UFunction_AProjectile_Testing, "Testing" }, // 2281586602
@@ -289,7 +243,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		{ "ModuleRelativePath", "Projectile.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectile_Statics::NewProp_Projectile = { "Projectile", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AProjectile, Projectile), Z_Construct_UClass_AProjectile_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AProjectile_Statics::NewProp_Projectile_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AProjectile_Statics::NewProp_Projectile_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectile_Statics::NewProp_Projectile = { "Projectile", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AProjectile, Projectile), Z_Construct_UClass_AProjectile_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AProjectile_Statics::NewProp_Projectile_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AProjectile_Statics::NewProp_Projectile_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AProjectile_Statics::NewProp_BoxComponent_MetaData[] = {
 		{ "Category", "Projectile" },
@@ -364,9 +318,9 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Projectile_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AProjectile, AProjectile::StaticClass, TEXT("AProjectile"), &Z_Registration_Info_UClass_AProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectile), 998505367U) },
+		{ Z_Construct_UClass_AProjectile, AProjectile::StaticClass, TEXT("AProjectile"), &Z_Registration_Info_UClass_AProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectile), 1011491189U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Projectile_h_4274867022(TEXT("/Script/ToonTanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Projectile_h_1818765500(TEXT("/Script/ToonTanks"),
 		Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Projectile_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Projectile_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

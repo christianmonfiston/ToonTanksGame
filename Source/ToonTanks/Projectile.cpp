@@ -52,9 +52,9 @@ void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
 
-	checkCollision(); 
+ 
 
-	BoxComponent->OnComponentHit.AddDynamic(this, &AProjectile::OnHit); 
+	ProjectileMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit); 
 	
 	
 	
@@ -66,8 +66,10 @@ void AProjectile::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	FVector Location = GetActorLocation(); 
-	UGameplayStatics::SpawnEmitterAtLocation(this, ProjectileTrailEmitter, Location); 
 
+	if (Projectile) {
+		UGameplayStatics::SpawnEmitterAtLocation(this, ProjectileTrailEmitter, Location);
+	}
 }
 
 void AProjectile::Testing() {
@@ -95,16 +97,9 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Magenta, TEXT("On Hit"));
 	}
 
+
+
 	Destroy(); 
 }
 	
 
-bool AProjectile::checkCollision() {
-
-	if (GEngine) {
-
-		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Magenta, TEXT("Collsion is happening")); 
-	}
-
-	return true; 
-}

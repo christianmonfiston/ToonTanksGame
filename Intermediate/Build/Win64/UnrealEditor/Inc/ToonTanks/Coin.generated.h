@@ -8,6 +8,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef TOONTANKS_Coin_generated_h
 #error "Coin.generated.h already included, missing '#pragma once' in Coin.h"
 #endif
@@ -16,12 +19,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_31_SPARSE_DATA
 #define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_31_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
+	DECLARE_FUNCTION(execOnHit); \
 	DECLARE_FUNCTION(execRotateCoin); \
 	DECLARE_FUNCTION(execDebugMessage);
 
 
 #define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
+	DECLARE_FUNCTION(execOnHit); \
 	DECLARE_FUNCTION(execRotateCoin); \
 	DECLARE_FUNCTION(execDebugMessage);
 

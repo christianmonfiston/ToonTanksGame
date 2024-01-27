@@ -72,5 +72,18 @@ public:
 
 	UPROPERTY(EditANywhere, BlueprintReadWrite)
 		float TimeDelta = UGameplayStatics::GetWorldDeltaSeconds(this); 
-	
+
+public: 
+
+	UFUNCTION()
+		void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
+	UFUNCTION()
+		void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+public: 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class USoundBase* CoinSound; 
+
 };
