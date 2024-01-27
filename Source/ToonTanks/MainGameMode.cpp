@@ -18,6 +18,7 @@ void AMainGameMode::BeginPlay() {
 Super::BeginPlay();  
 
  
+///This is cool
 
  UGameplayStatics::PlaySound2D(this, BackgroundSound);
 }
