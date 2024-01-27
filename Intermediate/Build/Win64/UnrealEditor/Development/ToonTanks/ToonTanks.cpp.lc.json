@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\source\\toontanks\\toontanks.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\intermediate\\build\\win64\\toontankseditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\intermediate\\build\\win64\\unrealeditor\\development\\toontanks\\definitions.toontanks.h",
+            "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\source\\toontanks\\toontanks.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

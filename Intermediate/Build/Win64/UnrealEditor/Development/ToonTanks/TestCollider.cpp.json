@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\source\\toontanks\\private\\testcollider.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\intermediate\\build\\win64\\toontankseditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\intermediate\\build\\win64\\unrealeditor\\development\\toontanks\\definitions.toontanks.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\boxcomponent.generated.h",
+            "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\source\\toontanks\\public\\testcollider.h",
+            "c:\\users\\chris\\downloads\\toontanksprojectsetup_4.25 (1)\\toontanksprojectsetup_4.25\\toontanks\\intermediate\\build\\win64\\unrealeditor\\inc\\toontanks\\testcollider.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
