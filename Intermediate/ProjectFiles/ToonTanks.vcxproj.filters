@@ -11,6 +11,9 @@
     <None Include="..\..\Source\ToonTanksEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\LICENSE.txt" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -77,6 +80,9 @@
     <Filter Include="Source\ToonTanks\Private">
       <UniqueIdentifier>{FDA45D07-F9C2-3F98-9290-D19ED8AC5536}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\ToonTanks\Private\Coin.cpp">
+      <Filter>Source\ToonTanks\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ToonTanks\Private\HealthComponent.cpp">
       <Filter>Source\ToonTanks\Private</Filter>
     </ClCompile>
@@ -86,6 +92,9 @@
     <Filter Include="Source\ToonTanks\Public">
       <UniqueIdentifier>{BD39C560-7238-3778-B4C3-6A1CA3BFF8AE}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\ToonTanks\Public\Coin.h">
+      <Filter>Source\ToonTanks\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ToonTanks\Public\HealthComponent.h">
       <Filter>Source\ToonTanks\Public</Filter>
     </ClInclude>

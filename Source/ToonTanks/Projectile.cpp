@@ -8,6 +8,7 @@
 #include "Components/PrimitiveComponent.h"
 #include "Components/InputComponent.h"
 #include "Components/SphereComponent.h"
+#include "Components/BoxComponent.h"
 #include "Sound/SoundBase.h"
 #include "Particles/ParticleSystem.h"
 #include "Kismet/GameplayStatics.h"
@@ -36,6 +37,13 @@ AProjectile::AProjectile()
 	ProjectileMovement->InitialSpeed = 2000.f * Time; 
 	ProjectileMovement->MaxSpeed = 2000.f * Time; 
 
+	BoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision Box")); 
+
+	BoxComponent->SetupAttachment(ProjectileMesh); 
+
+	
+	
+
 	
 }
 
@@ -43,6 +51,12 @@ AProjectile::AProjectile()
 void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
+
+	checkCollision(); 
+
+	BoxComponent->OnComponentHit.AddDynamic(this, &AProjectile::OnHit); 
+	
+	
 	
 }
 
@@ -82,4 +96,15 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	}
 
 	Destroy(); 
+}
+	
+
+bool AProjectile::checkCollision() {
+
+	if (GEngine) {
+
+		GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Magenta, TEXT("Collsion is happening")); 
+	}
+
+	return true; 
 }

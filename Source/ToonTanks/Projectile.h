@@ -12,6 +12,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "Particles/ParticleSystem.h"
+
 #include "Sound/SoundBase.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -51,6 +52,9 @@ public:
 	UPROPERTY(EditAnywhere)
 		AProjectile* Projectile;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class UBoxComponent* BoxComponent; 
+
 
 public:  
 
@@ -66,9 +70,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UParticleSystem* ProjectileTrailEmitter;
 
-
 public: 
 
 	UPROPERTY(VisibleAnywhere)
 		float Time; 
+
+public: 
+
+	UFUNCTION()
+	bool checkCollision(); 
 };
