@@ -6,6 +6,7 @@
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
 #include "Camera/CameraComponent.h"
+#include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
 #include "Projectile.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -37,7 +38,7 @@ ATower::ATower() {
 	TankPrimaryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Seconday Mesh"));
 	TankPrimaryMesh->SetupAttachment(SecondaryCapsule);
 
-	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collider")); 
+	//BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collider")); 
 
 	
 
@@ -47,7 +48,9 @@ ATower::ATower() {
 void ATower::BeginPlay() {
 	Super::BeginPlay(); 
 
-	BoxCollider->OnComponentHit.AddDynamic(this, &ATower::OnHit); 
+	TankMesh->OnComponentHit.AddDynamic(this, &ATower::OnHit); 
+
+	DrawDebugBox(GetWorld(), GetActorLocation(), 100.f, FColor::Green, true);
 }
 
 void ATower::Tick(float DeltaTime) {

@@ -10,6 +10,7 @@
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
 #include "Camera/CameraComponent.h"
+#include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
 #include "Projectile.h"
 #include "GameFramework/SpringArmComponent.h"
