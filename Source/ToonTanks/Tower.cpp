@@ -38,9 +38,12 @@ ATower::ATower() {
 	TankPrimaryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Seconday Mesh"));
 	TankPrimaryMesh->SetupAttachment(SecondaryCapsule);
 
-	//BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collider")); 
+	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collider")); 
 
-	
+	BoxCollider->SetupAttachment(MainCapsule); 
+
+	FVector Extent = FVector(100.f, 100.f, 100.f);
+	BoxCollider->SetBoxExtent(Extent); 
 
 	
 }
@@ -48,9 +51,14 @@ ATower::ATower() {
 void ATower::BeginPlay() {
 	Super::BeginPlay(); 
 
-	TankMesh->OnComponentHit.AddDynamic(this, &ATower::OnHit); 
+	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &ATower::OnBoxBeginOverlap); 
 
-	DrawDebugBox(GetWorld(), GetActorLocation(), 100.f, FColor::Green, true);
+	FVector Location = GetActorLocation();
+	FVector Extent = FVector(100.f, 100.f, 100.f); 
+
+	DrawDebugBox(GetWorld(), Location, Extent, FColor::Green, true); 
+	
+	
 }
 
 void ATower::Tick(float DeltaTime) {
@@ -79,11 +87,15 @@ void ATower::Fire() {
 	GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation); 
 }
 
-void ATower::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) {
+
+
+void ATower::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
+
+	Fire();
+
 
 	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green, TEXT("Tower is Overlapping with Tank")); 
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Orange, TEXT("Tower is overlapping with Tank"));
 	}
 
-	Fire(); 
 }
