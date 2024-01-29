@@ -5,6 +5,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
+#include "Components/SphereComponent.h"
 #include "Camera/CameraComponent.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
@@ -20,44 +21,43 @@ ATower::ATower() {
 	MainComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Root Capsule"));
 	RootComponent = MainComponent;
 
-	MainCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Main Capsule"));
-	MainCapsule->SetupAttachment(MainComponent);
+	//MainCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Main Capsule"));
+	//MainCapsule->SetupAttachment(MainComponent);
 
-	SecondaryCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Secondary Capsule"));
-	SecondaryCapsule->SetupAttachment(MainCapsule);
-
-
-	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn"));
-	ProjectileSpawnPoint->SetupAttachment(TankMesh);
-
-
+	//SecondaryCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Secondary Capsule"));
+	//SecondaryCapsule->SetupAttachment(MainCapsule);
 
 	TankMesh = CreateDefaultSubobject<UStaticMeshComponent>("TANK MESH");
-	TankMesh->SetupAttachment(SecondaryCapsule);
+	TankMesh->SetupAttachment(MainComponent);
 
 	TankPrimaryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Seconday Mesh"));
-	TankPrimaryMesh->SetupAttachment(SecondaryCapsule);
+	TankPrimaryMesh->SetupAttachment(MainComponent);
 
-	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collider")); 
+	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn"));
+	ProjectileSpawnPoint->SetupAttachment(MainComponent);
 
-	BoxCollider->SetupAttachment(MainCapsule); 
+	SphereCollider = CreateDefaultSubobject<USphereComponent>(TEXT("Collision Sphere"));
+	SphereCollider->SetupAttachment(MainCapsule);
 
-	FVector Extent = FVector(100.f, 100.f, 100.f);
-	BoxCollider->SetBoxExtent(Extent); 
 
+	
+
+	//BoxCollider->SetupAttachment(MainCapsule); 
+
+	
 	
 }
 
 void ATower::BeginPlay() {
 	Super::BeginPlay(); 
 
-	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &ATower::OnBoxBeginOverlap); 
+	SphereCollider->OnComponentBeginOverlap.AddDynamic(this, &ATower::OnBoxBeginOverlap); 
 
-	FVector Location = GetActorLocation();
-	FVector Extent = FVector(100.f, 100.f, 100.f); 
+	FVector Location = GetActorLocation(); 
 
-	DrawDebugBox(GetWorld(), Location, Extent, FColor::Green, true); 
-	
+	float Radius = 400.f; 
+
+	DrawDebugSphere(GetWorld(), Location, Radius, 30.f, FColor::Orange, true); 
 	
 }
 

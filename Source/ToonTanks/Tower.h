@@ -9,6 +9,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
+#include "Components/SphereComponent.h"
 #include "Camera/CameraComponent.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
@@ -61,8 +62,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 		class UStaticMeshComponent* TankPrimaryMesh;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		class UBoxComponent* BoxCollider = nullptr; 
 
 public: 
 
@@ -70,13 +69,12 @@ public:
 		TSubclassOf<AProjectile> ProjectileClass; 
 
 	UFUNCTION()
-		void Fire(); 
-
-
-	UFUNCTION()
-		void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-
+		void Fire();
+	
 	UFUNCTION()
 		void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class USphereComponent* SphereCollider; 
 };
