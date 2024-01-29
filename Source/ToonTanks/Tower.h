@@ -10,6 +10,8 @@
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Projectile.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Tower.generated.h"
 
@@ -60,5 +62,16 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UBoxComponent* BoxCollider = nullptr; 
+
+public: 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TSubclassOf<AProjectile> ProjectileClass; 
+	UFUNCTION()
+		void Fire(); 
+
+
+	UFUNCTION()
+		void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 	
 };
