@@ -26,8 +26,16 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
+	TOONTANKS_API UClass* Z_Construct_UClass_ACoin_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
+	DEFINE_FUNCTION(ATank::execCoinsContainer)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CoinsContainer();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ATank::execOnComponentBeginOverlap)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp);
@@ -98,6 +106,7 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "ActorDrawLine", &ATank::execActorDrawLine },
 			{ "ActorSpawn", &ATank::execActorSpawn },
+			{ "CoinsContainer", &ATank::execCoinsContainer },
 			{ "DisplayDeltaSeconds", &ATank::execDisplayDeltaSeconds },
 			{ "DrawLine", &ATank::execDrawLine },
 			{ "Fire", &ATank::execFire },
@@ -148,6 +157,28 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATank_ActorSpawn_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATank_CoinsContainer_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATank_CoinsContainer_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Tank.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATank_CoinsContainer_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATank, nullptr, "CoinsContainer", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATank_CoinsContainer_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATank_CoinsContainer_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATank_CoinsContainer()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATank_CoinsContainer_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -427,6 +458,10 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileTrail;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CoinClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_CoinClass;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ActorLocation_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_ActorLocation;
@@ -477,6 +512,7 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATank_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ATank_ActorDrawLine, "ActorDrawLine" }, // 4145568249
 		{ &Z_Construct_UFunction_ATank_ActorSpawn, "ActorSpawn" }, // 3425820193
+		{ &Z_Construct_UFunction_ATank_CoinsContainer, "CoinsContainer" }, // 3778536779
 		{ &Z_Construct_UFunction_ATank_DisplayDeltaSeconds, "DisplayDeltaSeconds" }, // 2010703488
 		{ &Z_Construct_UFunction_ATank_DrawLine, "DrawLine" }, // 2422734262
 		{ &Z_Construct_UFunction_ATank_Fire, "Fire" }, // 2247169616
@@ -594,6 +630,13 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_ProjectileTrail = { "ProjectileTrail", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATank, ProjectileTrail), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_ProjectileTrail_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_ProjectileTrail_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_CoinClass_MetaData[] = {
+		{ "Category", "Tank" },
+		{ "ModuleRelativePath", "Tank.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_CoinClass = { "CoinClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATank, CoinClass), Z_Construct_UClass_ACoin_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_CoinClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_CoinClass_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_ActorLocation_MetaData[] = {
 		{ "Category", "Tank" },
 		{ "ModuleRelativePath", "Tank.h" },
@@ -677,6 +720,7 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_CollisionComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_ProjectileSound,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_ProjectileTrail,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_CoinClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_ActorLocation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_TankTurnRate,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_TankLocation,
@@ -724,9 +768,9 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 2138482219U) },
+		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 2929615570U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_3941377495(TEXT("/Script/ToonTanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_943759484(TEXT("/Script/ToonTanks"),
 		Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

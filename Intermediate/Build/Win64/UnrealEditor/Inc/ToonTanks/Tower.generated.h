@@ -16,20 +16,22 @@ struct FHitResult;
 #endif
 #define TOONTANKS_Tower_generated_h
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_SPARSE_DATA
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_RPC_WRAPPERS \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_SPARSE_DATA
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execProcedesToLineTrace); \
 	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
 	DECLARE_FUNCTION(execFire);
 
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execProcedesToLineTrace); \
 	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
 	DECLARE_FUNCTION(execFire);
 
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_INCLASS_NO_PURE_DECLS \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATower(); \
 	friend struct Z_Construct_UClass_ATower_Statics; \
@@ -38,7 +40,7 @@ public: \
 	DECLARE_SERIALIZER(ATower)
 
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_INCLASS \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_INCLASS \
 private: \
 	static void StaticRegisterNativesATower(); \
 	friend struct Z_Construct_UClass_ATower_Statics; \
@@ -47,7 +49,7 @@ public: \
 	DECLARE_SERIALIZER(ATower)
 
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_STANDARD_CONSTRUCTORS \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ATower(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATower) \
@@ -60,7 +62,7 @@ private: \
 public:
 
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_ENHANCED_CONSTRUCTORS \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATower(ATower&&); \
@@ -71,25 +73,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATower)
 
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_23_PROLOG
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_GENERATED_BODY_LEGACY \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_24_PROLOG
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_SPARSE_DATA \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_RPC_WRAPPERS \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_INCLASS \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_STANDARD_CONSTRUCTORS \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_SPARSE_DATA \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_RPC_WRAPPERS \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_INCLASS \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_ToonTanks_Source_ToonTanks_Tower_h_26_GENERATED_BODY \
+#define FID_ToonTanks_Source_ToonTanks_Tower_h_27_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_SPARSE_DATA \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_INCLASS_NO_PURE_DECLS \
-	FID_ToonTanks_Source_ToonTanks_Tower_h_26_ENHANCED_CONSTRUCTORS \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_SPARSE_DATA \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_INCLASS_NO_PURE_DECLS \
+	FID_ToonTanks_Source_ToonTanks_Tower_h_27_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

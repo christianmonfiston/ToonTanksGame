@@ -16,6 +16,7 @@
 #include "Sound/SoundBase.h"
 #include "Particles/ParticleSystem.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Coin.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "HealthComponent.h"
 #include "DrawDebugHelpers.h"
@@ -82,6 +83,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class UParticleSystem* ProjectileTrail; 
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TSubclassOf<ACoin> CoinClass; 
 
 
 	
@@ -158,6 +161,7 @@ public:
 	UFUNCTION()
 		void OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-
+	UFUNCTION()
+		void CoinsContainer(); 
 
 };

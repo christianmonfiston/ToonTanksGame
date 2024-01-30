@@ -19,10 +19,18 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	TOONTANKS_API UClass* Z_Construct_UClass_ATank_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	TOONTANKS_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(ATower::execProcedesToLineTrace)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ProcedesToLineTrace();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ATower::execOnBoxBeginOverlap)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp);
@@ -49,6 +57,7 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "Fire", &ATower::execFire },
 			{ "OnBoxBeginOverlap", &ATower::execOnBoxBeginOverlap },
+			{ "ProcedesToLineTrace", &ATower::execProcedesToLineTrace },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -155,6 +164,28 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ATower_ProcedesToLineTrace_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATower_ProcedesToLineTrace_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Tower.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATower_ProcedesToLineTrace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATower, nullptr, "ProcedesToLineTrace", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATower_ProcedesToLineTrace_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATower_ProcedesToLineTrace_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATower_ProcedesToLineTrace()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATower_ProcedesToLineTrace_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ATower);
 	UClass* Z_Construct_UClass_ATower_NoRegister()
 	{
@@ -192,6 +223,10 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_TankPrimaryMesh;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Tank_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Tank;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_ProjectileClass;
@@ -210,6 +245,7 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATower_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ATower_Fire, "Fire" }, // 2713018114
 		{ &Z_Construct_UFunction_ATower_OnBoxBeginOverlap, "OnBoxBeginOverlap" }, // 227531781
+		{ &Z_Construct_UFunction_ATower_ProcedesToLineTrace, "ProcedesToLineTrace" }, // 4056099407
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATower_Statics::Class_MetaDataParams[] = {
@@ -268,6 +304,13 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATower_Statics::NewProp_TankPrimaryMesh = { "TankPrimaryMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATower, TankPrimaryMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATower_Statics::NewProp_TankPrimaryMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATower_Statics::NewProp_TankPrimaryMesh_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATower_Statics::NewProp_Tank_MetaData[] = {
+		{ "Category", "Tower" },
+		{ "ModuleRelativePath", "Tower.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATower_Statics::NewProp_Tank = { "Tank", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATower, Tank), Z_Construct_UClass_ATank_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATower_Statics::NewProp_Tank_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATower_Statics::NewProp_Tank_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATower_Statics::NewProp_ProjectileClass_MetaData[] = {
 		{ "Category", "Tower" },
 		{ "ModuleRelativePath", "Tower.h" },
@@ -289,6 +332,7 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATower_Statics::NewProp_ProjectileSpawnPoint,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATower_Statics::NewProp_TankMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATower_Statics::NewProp_TankPrimaryMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATower_Statics::NewProp_Tank,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATower_Statics::NewProp_ProjectileClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATower_Statics::NewProp_SphereCollider,
 	};
@@ -328,9 +372,9 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATower, ATower::StaticClass, TEXT("ATower"), &Z_Registration_Info_UClass_ATower, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATower), 1327382118U) },
+		{ Z_Construct_UClass_ATower, ATower::StaticClass, TEXT("ATower"), &Z_Registration_Info_UClass_ATower, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATower), 2706738825U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_1509164363(TEXT("/Script/ToonTanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_3362010019(TEXT("/Script/ToonTanks"),
 		Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

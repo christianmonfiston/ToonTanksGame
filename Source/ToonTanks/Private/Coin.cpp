@@ -8,7 +8,6 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "Particles/ParticleSystem.h"
-
 #include "Sound/SoundBase.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -102,6 +101,7 @@ void ACoin::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other
 
 	FVector CoinLocation = GetActorLocation(); 
 	UGameplayStatics::PlaySoundAtLocation(this, CoinSound, CoinLocation); 
+
 
 
 	Destroy();

@@ -7,6 +7,7 @@
 #include "DrawDebugHelpers.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Tank.h"
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
 #include "Components/SphereComponent.h"
@@ -62,6 +63,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 		class UStaticMeshComponent* TankPrimaryMesh;
 
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+		ATank* Tank; 
+
 
 public: 
 
@@ -77,4 +81,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class USphereComponent* SphereCollider; 
+
+	UFUNCTION()
+		void ProcedesToLineTrace(); 
 };

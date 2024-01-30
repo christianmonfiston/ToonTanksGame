@@ -11,6 +11,7 @@
 #include "Sound/SoundBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystem.h"
+#include "Coin.h"
 #include "HealthComponent.h"
 #include "Projectile.h"
 #include "DrawDebugHelpers.h"
@@ -219,9 +220,25 @@ void ATank::ActorSpawn() {
 
 void ATank::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
 
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Tank is overlapping"));
+	//if (GEngine) {
+	//	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Tank is overlapping"));
+	//}
+
+	ACoin* Coin = Cast<ACoin>(OtherActor); 
+		
+	if (Coin)
+	{
+		if (GEngine) {
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Colliding with coin is workiong"));
+		}
 	}
+
+}
+
+void ATank::CoinsContainer() {
+
+	float num = 1.0f;
+	//TArray<ACoin> Coin; 
 }
 
 
