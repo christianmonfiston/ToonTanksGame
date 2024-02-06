@@ -7,11 +7,13 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
+#include "Math/UnrealMathUtility.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/PrimitiveComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "Particles/ParticleSystem.h"
+#include "Math/RandomStream.h"
 #include "Sound/SoundBase.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -84,5 +86,30 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class USoundBase* CoinSound; 
+
+public:
+
+	UFUNCTION()
+		void SpawnCoin();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		TSubclassOf <ACoin> CoinClass; 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		ACoin* Coin;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		 int32 Min;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		int32 Max;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		int32 RandomInt; 
+
+
+
+	
+
 
 };

@@ -9,7 +9,9 @@
 #include "Components/InputComponent.h"
 #include "Particles/ParticleSystem.h"
 #include "Sound/SoundBase.h"
+#include "Math/UnrealMathUtility.h"
 #include "Camera/CameraComponent.h"
+#include "Math/RandomStream.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraComponent.h"
 #include "Components/SphereComponent.h"
@@ -48,6 +50,10 @@ void ACoin::BeginPlay()
 
 
 	BoxComponent->OnComponentBeginOverlap.AddDynamic(this, &ACoin::OnBoxBeginOverlap);
+
+	Min = 10;
+	Max = 50;
+	RandomInt = FMath::RandRange(Min, Max);
 	
 }
 
@@ -106,3 +112,25 @@ void ACoin::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other
 
 	Destroy();
 }
+
+
+void ACoin::SpawnCoin() {
+
+	
+
+	int32 NumberOfCoins = 10;
+	FVector Location =FVector::ZeroVector;
+	FRotator Rotation = FRotator::ZeroRotator;
+	;
+
+
+	for (int32 i = 0; i < NumberOfCoins; i++) {
+		GetWorld()->SpawnActor<ACoin>(CoinClass, Location, Rotation);
+	}
+
+
+
+}
+
+
+

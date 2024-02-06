@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TOONTANKS_MainGameMode_generated_h
 
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_SPARSE_DATA
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_RPC_WRAPPERS
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_SPARSE_DATA
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_RPC_WRAPPERS
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMainGameMode(); \
 	friend struct Z_Construct_UClass_AMainGameMode_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AMainGameMode)
 
 
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_INCLASS \
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_INCLASS \
 private: \
 	static void StaticRegisterNativesAMainGameMode(); \
 	friend struct Z_Construct_UClass_AMainGameMode_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AMainGameMode)
 
 
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_STANDARD_CONSTRUCTORS \
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMainGameMode(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMainGameMode) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMainGameMode(AMainGameMode&&); \
@@ -58,25 +58,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMainGameMode)
 
 
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_14_PROLOG
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_GENERATED_BODY_LEGACY \
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_15_PROLOG
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_SPARSE_DATA \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_RPC_WRAPPERS \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_INCLASS \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_STANDARD_CONSTRUCTORS \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_SPARSE_DATA \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_RPC_WRAPPERS \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_INCLASS \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_GENERATED_BODY \
+#define FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_SPARSE_DATA \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_INCLASS_NO_PURE_DECLS \
-	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_17_ENHANCED_CONSTRUCTORS \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_SPARSE_DATA \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_INCLASS_NO_PURE_DECLS \
+	FID_ToonTanks_Source_ToonTanks_MainGameMode_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -76,4 +76,6 @@ public:
 	UPROPERTY(VisibleAnywhere)
 		float Time; 
 
+	
+
 };

@@ -2,6 +2,7 @@
 
 #include "Sound/SoundBase.h"
 #include "Kismet/GameplayStatics.h"
+#include "Coin.h"
 #include "MainGameMode.h"
 
 
@@ -31,5 +32,6 @@ void AMainGameMode::Tick(float DeltaTime) {
 
 	
 }
+
 
 

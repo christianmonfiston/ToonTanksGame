@@ -8,9 +8,6 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UPrimitiveComponent;
-class AActor;
-struct FHitResult;
 #ifdef TOONTANKS_Tower_generated_h
 #error "Tower.generated.h already included, missing '#pragma once' in Tower.h"
 #endif
@@ -19,15 +16,15 @@ struct FHitResult;
 #define FID_ToonTanks_Source_ToonTanks_Tower_h_27_SPARSE_DATA
 #define FID_ToonTanks_Source_ToonTanks_Tower_h_27_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execRotateTurret); \
 	DECLARE_FUNCTION(execProcedesToLineTrace); \
-	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
 	DECLARE_FUNCTION(execFire);
 
 
 #define FID_ToonTanks_Source_ToonTanks_Tower_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execRotateTurret); \
 	DECLARE_FUNCTION(execProcedesToLineTrace); \
-	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
 	DECLARE_FUNCTION(execFire);
 
 

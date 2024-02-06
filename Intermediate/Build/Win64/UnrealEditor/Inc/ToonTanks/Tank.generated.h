@@ -27,7 +27,8 @@ struct FHitResult;
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execDisplayDeltaSeconds); \
 	DECLARE_FUNCTION(execRotateTurret); \
-	DECLARE_FUNCTION(execMoveForward);
+	DECLARE_FUNCTION(execMoveForward); \
+	DECLARE_FUNCTION(execDebug);
 
 
 #define FID_ToonTanks_Source_ToonTanks_Tank_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
@@ -40,7 +41,8 @@ struct FHitResult;
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execDisplayDeltaSeconds); \
 	DECLARE_FUNCTION(execRotateTurret); \
-	DECLARE_FUNCTION(execMoveForward);
+	DECLARE_FUNCTION(execMoveForward); \
+	DECLARE_FUNCTION(execDebug);
 
 
 #define FID_ToonTanks_Source_ToonTanks_Tank_h_31_INCLASS_NO_PURE_DECLS \

@@ -235,10 +235,4 @@ void ATank::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor*
 
 }
 
-void ATank::CoinsContainer() {
-
-	float num = 1.0f;
-	//TArray<ACoin> Coin; 
-}
-
 

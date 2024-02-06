@@ -54,8 +54,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 		class USceneComponent* ProjectileSpawnPoint;
 
-	
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 		class UStaticMeshComponent* TankMesh; 
 
@@ -84,14 +82,11 @@ public:
 		class UParticleSystem* ProjectileTrail; 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		TSubclassOf<ACoin> CoinClass; 
-
-
-	
-	
+		TSubclassOf<ACoin> CoinClass;
 
 public: 
 
+	UFUNCTION()
 	void Debug();
 
 	UPROPERTY(EditAnywhere)

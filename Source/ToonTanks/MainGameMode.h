@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "Kismet/GameplayStatics.h"
+#include "Coin.h"
 #include "Sound/SoundBase.h"
 #include "MainGameMode.generated.h"
 
@@ -39,4 +40,5 @@ public:
 		class USoundBase* BackgroundSound; 
 
 	
+
 };

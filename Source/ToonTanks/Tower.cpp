@@ -52,13 +52,17 @@ ATower::ATower() {
 void ATower::BeginPlay() {
 	Super::BeginPlay(); 
 
-	SphereCollider->OnComponentBeginOverlap.AddDynamic(this, &ATower::OnBoxBeginOverlap); 
+	
 
 	FVector Location = GetActorLocation(); 
 
-	float Radius = 400.f; 
+	float Radius = 40.f; 
 
 	DrawDebugSphere(GetWorld(), Location, Radius, 30.f, FColor::Orange, true); 
+
+	Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
+	
+	
 	
 }
 
@@ -66,7 +70,16 @@ void ATower::Tick(float DeltaTime) {
 
 	Super::Tick(DeltaTime); 
 
-	//DebugMessage(); 
+
+	if (Tank) {
+		Distance = FVector::Dist(GetActorLocation(), Tank->GetActorLocation()); 
+		ProcedesToLineTrace(); 
+
+		if (Distance <= FireRange) {
+			RotateTurret(); 
+		}
+
+	}
 }
 
 
@@ -95,20 +108,22 @@ void ATower::ProcedesToLineTrace() {
 	FVector Start = ProjectileSpawnPoint->GetComponentLocation();
 	
 
-	DrawDebugLine(GetWorld(), Start, End, FColor::Red, true);
+	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
 }
 
-void ATower::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
+void ATower::RotateTurret() {
 
-	Fire();
+	FRotator TurretRotation = FRotator::ZeroRotator; 
 
+	float Speed = 400.f; 
 
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Orange, TEXT("Tower is overlapping with Tank"));
-	}
+	float Time = UGameplayStatics::GetWorldDeltaSeconds(this); 
 
-	ProcedesToLineTrace(); 
+	FRotator TankRotation = Tank->GetActorRotation();
+
+	TurretRotation = TankRotation; 
+
+	AddActorLocalRotation(TurretRotation, true); 
 
 }
-
 
