@@ -9,6 +9,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Tank.h"
 #include "Components/BoxComponent.h"
+#include "Sound/SoundBase.h"
 #include "Components/InputComponent.h"
 #include "Components/SphereComponent.h"
 #include "Camera/CameraComponent.h"
@@ -89,4 +90,7 @@ public:
 
 	UFUNCTION()
 		void RotateTurret();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		USoundBase* ProjectileSound; 
 };

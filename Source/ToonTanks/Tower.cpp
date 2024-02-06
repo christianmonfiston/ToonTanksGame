@@ -8,6 +8,7 @@
 #include "Components/SphereComponent.h"
 #include "Camera/CameraComponent.h"
 #include "DrawDebugHelpers.h"
+#include "Sound/SoundBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Tank.h"
 #include "Projectile.h"
@@ -77,6 +78,7 @@ void ATower::Tick(float DeltaTime) {
 
 		if (Distance <= FireRange) {
 			RotateTurret(); 
+			Fire();
 		}
 
 	}
@@ -99,6 +101,9 @@ void ATower::Fire() {
 
 
 	GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation); 
+
+	UGameplayStatics::PlaySoundAtLocation(this, ProjectileSound, Location); 
+	
 }
 
 void ATower::ProcedesToLineTrace() {
