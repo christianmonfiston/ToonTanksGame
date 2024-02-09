@@ -89,8 +89,13 @@ public:
 		float FireRange = 300.f; 
 
 	UFUNCTION()
-		void RotateTurret();
+		void Rotate();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		USoundBase* ProjectileSound; 
+
+public: 
+
+	UFUNCTION()
+		void TowerAI(); 
 };

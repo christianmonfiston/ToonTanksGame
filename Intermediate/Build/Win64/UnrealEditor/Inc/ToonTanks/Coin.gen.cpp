@@ -22,6 +22,8 @@ void EmptyLinkFunctionForGeneratedCodeCoin() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	TOONTANKS_API UClass* Z_Construct_UClass_ATank_NoRegister();
+	TOONTANKS_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ACoin::execSpawnCoin)
 	{
@@ -360,6 +362,14 @@ void EmptyLinkFunctionForGeneratedCodeCoin() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_RandomInt_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_RandomInt;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Tank_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Tank;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Projectile_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Projectile;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -467,6 +477,20 @@ void EmptyLinkFunctionForGeneratedCodeCoin() {}
 	};
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ACoin_Statics::NewProp_RandomInt = { "RandomInt", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACoin, RandomInt), METADATA_PARAMS(Z_Construct_UClass_ACoin_Statics::NewProp_RandomInt_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACoin_Statics::NewProp_RandomInt_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACoin_Statics::NewProp_Tank_MetaData[] = {
+		{ "Category", "Coin" },
+		{ "ModuleRelativePath", "Public/Coin.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACoin_Statics::NewProp_Tank = { "Tank", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACoin, Tank), Z_Construct_UClass_ATank_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACoin_Statics::NewProp_Tank_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACoin_Statics::NewProp_Tank_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACoin_Statics::NewProp_Projectile_MetaData[] = {
+		{ "Category", "Coin" },
+		{ "ModuleRelativePath", "Public/Coin.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACoin_Statics::NewProp_Projectile = { "Projectile", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACoin, Projectile), Z_Construct_UClass_AProjectile_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACoin_Statics::NewProp_Projectile_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACoin_Statics::NewProp_Projectile_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACoin_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACoin_Statics::NewProp_CoinMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACoin_Statics::NewProp_BoxComponent,
@@ -480,6 +504,8 @@ void EmptyLinkFunctionForGeneratedCodeCoin() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACoin_Statics::NewProp_Min,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACoin_Statics::NewProp_Max,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACoin_Statics::NewProp_RandomInt,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACoin_Statics::NewProp_Tank,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACoin_Statics::NewProp_Projectile,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACoin_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACoin>::IsAbstract,
@@ -517,9 +543,9 @@ void EmptyLinkFunctionForGeneratedCodeCoin() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Public_Coin_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACoin, ACoin::StaticClass, TEXT("ACoin"), &Z_Registration_Info_UClass_ACoin, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACoin), 114451391U) },
+		{ Z_Construct_UClass_ACoin, ACoin::StaticClass, TEXT("ACoin"), &Z_Registration_Info_UClass_ACoin, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACoin), 1643709309U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Public_Coin_h_2031408828(TEXT("/Script/ToonTanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Public_Coin_h_1350600048(TEXT("/Script/ToonTanks"),
 		Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Public_Coin_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Public_Coin_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -22,6 +22,13 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(ATower::execTowerAI)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->TowerAI();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ATower::execRotateTurret)
 	{
 		P_FINISH;
@@ -50,6 +57,7 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 			{ "Fire", &ATower::execFire },
 			{ "ProcedesToLineTrace", &ATower::execProcedesToLineTrace },
 			{ "RotateTurret", &ATower::execRotateTurret },
+			{ "TowerAI", &ATower::execTowerAI },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -116,6 +124,28 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATower_RotateTurret_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATower_TowerAI_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATower_TowerAI_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Tower.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATower_TowerAI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATower, nullptr, "TowerAI", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATower_TowerAI_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATower_TowerAI_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATower_TowerAI()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATower_TowerAI_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -191,6 +221,7 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 		{ &Z_Construct_UFunction_ATower_Fire, "Fire" }, // 2713018114
 		{ &Z_Construct_UFunction_ATower_ProcedesToLineTrace, "ProcedesToLineTrace" }, // 4056099407
 		{ &Z_Construct_UFunction_ATower_RotateTurret, "RotateTurret" }, // 1477399007
+		{ &Z_Construct_UFunction_ATower_TowerAI, "TowerAI" }, // 2476333255
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATower_Statics::Class_MetaDataParams[] = {
@@ -341,9 +372,9 @@ void EmptyLinkFunctionForGeneratedCodeTower() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATower, ATower::StaticClass, TEXT("ATower"), &Z_Registration_Info_UClass_ATower, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATower), 1527130749U) },
+		{ Z_Construct_UClass_ATower, ATower::StaticClass, TEXT("ATower"), &Z_Registration_Info_UClass_ATower, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATower), 2546136524U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_2497006096(TEXT("/Script/ToonTanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_1494207086(TEXT("/Script/ToonTanks"),
 		Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tower_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

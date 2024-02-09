@@ -16,6 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_ToonTanks_Source_ToonTanks_Tower_h_28_SPARSE_DATA
 #define FID_ToonTanks_Source_ToonTanks_Tower_h_28_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execTowerAI); \
 	DECLARE_FUNCTION(execRotateTurret); \
 	DECLARE_FUNCTION(execProcedesToLineTrace); \
 	DECLARE_FUNCTION(execFire);
@@ -23,6 +24,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_ToonTanks_Source_ToonTanks_Tower_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execTowerAI); \
 	DECLARE_FUNCTION(execRotateTurret); \
 	DECLARE_FUNCTION(execProcedesToLineTrace); \
 	DECLARE_FUNCTION(execFire);

@@ -229,9 +229,20 @@ void ATank::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor*
 	if (Coin)
 	{
 		if (GEngine) {
-			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Colliding with coin is workiong"));
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Tank is colliding with coin is workiong"));
 		}
 	}
+
+}
+
+void ATank::RotateTurret(FVector LookAtTarget) {
+
+	FVector ToTarget = LookAtTarget - TankPrimaryMesh->GetComponentLocation();
+
+
+	FRotator LookAtRotation = FRotator(0.f,ToTarget.Rotation().Yaw, 0.f); 
+	TankPrimaryMesh->SetWorldRotation(LookAtRotation);
+
 
 }
 

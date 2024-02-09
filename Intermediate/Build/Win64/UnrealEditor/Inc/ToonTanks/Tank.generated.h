@@ -19,7 +19,6 @@ struct FHitResult;
 #define FID_ToonTanks_Source_ToonTanks_Tank_h_31_SPARSE_DATA
 #define FID_ToonTanks_Source_ToonTanks_Tank_h_31_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execCoinsContainer); \
 	DECLARE_FUNCTION(execOnComponentBeginOverlap); \
 	DECLARE_FUNCTION(execActorSpawn); \
 	DECLARE_FUNCTION(execActorDrawLine); \
@@ -33,7 +32,6 @@ struct FHitResult;
 
 #define FID_ToonTanks_Source_ToonTanks_Tank_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execCoinsContainer); \
 	DECLARE_FUNCTION(execOnComponentBeginOverlap); \
 	DECLARE_FUNCTION(execActorSpawn); \
 	DECLARE_FUNCTION(execActorDrawLine); \

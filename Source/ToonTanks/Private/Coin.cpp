@@ -12,6 +12,7 @@
 #include "Math/UnrealMathUtility.h"
 #include "Camera/CameraComponent.h"
 #include "Math/RandomStream.h"
+#include "ToonTanks/Projectile.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraComponent.h"
 #include "Components/SphereComponent.h"
@@ -37,6 +38,7 @@ ACoin::ACoin()
 	FVector BoxSize = FVector(60.f, 60.f, 60.f); 
 	BoxComponent->SetBoxExtent(BoxSize); 
 
+	
 
 
 }
@@ -54,6 +56,8 @@ void ACoin::BeginPlay()
 	Min = 10;
 	Max = 50;
 	RandomInt = FMath::RandRange(Min, Max);
+
+	//Get Projectile
 	
 }
 
@@ -108,9 +112,15 @@ void ACoin::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other
 	FVector CoinLocation = GetActorLocation(); 
 	UGameplayStatics::PlaySoundAtLocation(this, CoinSound, CoinLocation); 
 
+	if (OtherActor == Projectile) {
+		if (GEngine) {
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Orange, TEXT("Genius"));
+		}
 
-
-	Destroy();
+		Destroy(); 
+	}
+	
+	
 }
 
 

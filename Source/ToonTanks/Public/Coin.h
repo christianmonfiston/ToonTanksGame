@@ -16,6 +16,7 @@
 #include "Math/RandomStream.h"
 #include "Sound/SoundBase.h"
 #include "Camera/CameraComponent.h"
+#include "ToonTanks/Projectile.h"
 #include "Kismet/GameplayStatics.h"
 #include "Camera/CameraComponent.h"
 #include "Components/SphereComponent.h"
@@ -107,6 +108,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		int32 RandomInt; 
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class ATank* Tank; 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		AProjectile* Projectile; 
 
 
 	

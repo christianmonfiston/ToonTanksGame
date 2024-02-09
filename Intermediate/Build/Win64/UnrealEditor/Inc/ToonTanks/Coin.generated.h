@@ -16,8 +16,8 @@ struct FHitResult;
 #endif
 #define TOONTANKS_Coin_generated_h
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_SPARSE_DATA
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_RPC_WRAPPERS \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_SPARSE_DATA
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execSpawnCoin); \
 	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
@@ -26,7 +26,7 @@ struct FHitResult;
 	DECLARE_FUNCTION(execDebugMessage);
 
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execSpawnCoin); \
 	DECLARE_FUNCTION(execOnBoxBeginOverlap); \
@@ -35,7 +35,7 @@ struct FHitResult;
 	DECLARE_FUNCTION(execDebugMessage);
 
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_INCLASS_NO_PURE_DECLS \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACoin(); \
 	friend struct Z_Construct_UClass_ACoin_Statics; \
@@ -44,7 +44,7 @@ public: \
 	DECLARE_SERIALIZER(ACoin)
 
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_INCLASS \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_INCLASS \
 private: \
 	static void StaticRegisterNativesACoin(); \
 	friend struct Z_Construct_UClass_ACoin_Statics; \
@@ -53,7 +53,7 @@ public: \
 	DECLARE_SERIALIZER(ACoin)
 
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_STANDARD_CONSTRUCTORS \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACoin(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACoin) \
@@ -66,7 +66,7 @@ private: \
 public:
 
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_ENHANCED_CONSTRUCTORS \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACoin(ACoin&&); \
@@ -77,25 +77,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACoin)
 
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_29_PROLOG
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_GENERATED_BODY_LEGACY \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_30_PROLOG
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_SPARSE_DATA \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_RPC_WRAPPERS \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_INCLASS \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_STANDARD_CONSTRUCTORS \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_SPARSE_DATA \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_RPC_WRAPPERS \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_INCLASS \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_GENERATED_BODY \
+#define FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_SPARSE_DATA \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_INCLASS_NO_PURE_DECLS \
-	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_32_ENHANCED_CONSTRUCTORS \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_SPARSE_DATA \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_INCLASS_NO_PURE_DECLS \
+	FID_ToonTanks_Source_ToonTanks_Public_Coin_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

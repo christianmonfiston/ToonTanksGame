@@ -71,17 +71,9 @@ void ATower::Tick(float DeltaTime) {
 
 	Super::Tick(DeltaTime); 
 
+	TowerAI(); 
 
-	if (Tank) {
-		Distance = FVector::Dist(GetActorLocation(), Tank->GetActorLocation()); 
-		ProcedesToLineTrace(); 
-
-		if (Distance <= FireRange) {
-			RotateTurret(); 
-			Fire();
-		}
-
-	}
+	
 }
 
 
@@ -116,7 +108,7 @@ void ATower::ProcedesToLineTrace() {
 	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
 }
 
-void ATower::RotateTurret() {
+void ATower::RotateMyTurret() {
 
 	FRotator TurretRotation = FRotator::ZeroRotator; 
 
@@ -124,11 +116,29 @@ void ATower::RotateTurret() {
 
 	float Time = UGameplayStatics::GetWorldDeltaSeconds(this); 
 
-	FRotator TankRotation = Tank->GetActorRotation();
+	FVector TankRotation = Tank->GetActorLocation();
 
-	TurretRotation = TankRotation; 
+	float Value = TankRotation.Z;
+
+	
+
+	TurretRotation.Yaw = Value * Speed;
 
 	AddActorLocalRotation(TurretRotation, true); 
 
+}
+
+void ATower::TowerAI() {
+
+	if (Tank) {
+		Distance = FVector::Dist(GetActorLocation(), Tank->GetActorLocation());
+		ProcedesToLineTrace();
+
+		if (Distance <= FireRange) {
+			//RotateMyTurret();
+			Fire();
+		}
+
+	}
 }
 
