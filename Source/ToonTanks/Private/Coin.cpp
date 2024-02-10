@@ -110,16 +110,9 @@ void ACoin::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other
 	}
 
 	FVector CoinLocation = GetActorLocation(); 
-	UGameplayStatics::PlaySoundAtLocation(this, CoinSound, CoinLocation); 
+	UGameplayStatics::PlaySoundAtLocation(this, CoinSound, CoinLocation);
 
-	if (OtherActor == Projectile) {
-		if (GEngine) {
-			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Orange, TEXT("Genius"));
-		}
-
-		Destroy(); 
-	}
-	
+	Destroy(); 
 	
 }
 

@@ -12,6 +12,7 @@
 #include "Components/InputComponent.h"
 #include "Components/SphereComponent.h"
 #include "Projectile.h"
+#include "GameFramework/PlayerController.h"
 #include "Camera/CameraComponent.h"
 #include "Sound/SoundBase.h"
 #include "Particles/ParticleSystem.h"
@@ -158,9 +159,9 @@ public:
 
 
 public:
-
-
 	
 		void RotateTurret(FVector LookAtTarget);
+
+		APlayerController* PlayerControllerRef; 
 
 };

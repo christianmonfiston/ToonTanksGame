@@ -4,6 +4,7 @@
 #include "Camera/CameraComponent.h"
 #include "BasePawn.h"
 #include "Components/PrimitiveComponent.h"
+#include "GameFramework/PlayerController.h"
 #include "Components/InputComponent.h"
 #include "Components/BoxComponent.h"
 #include "Components/SphereComponent.h"
@@ -69,6 +70,8 @@ void ATank::BeginPlay() {
 	//DrawDebugSphere(GetWorld(), ActorLocation, Radius, 45.0f, FColor::Green, true, 1.f);
 	//Fire(); 
 
+	PlayerControllerRef = Cast<APlayerController>(GetController());
+
 }
 
 void ATank::Tick(float DeltaTime) {
@@ -84,7 +87,12 @@ void ATank::Tick(float DeltaTime) {
 
 	// ProjectileTesting->Testing();
 
+	 if (PlayerControllerRef) {
+		 PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, HitResult); 
+	 }
 
+
+	 DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 50.f, 42.f, FColor::Orange); 
 
 }
 
@@ -199,7 +207,7 @@ void ATank::ActorDrawLine() {
 	ProjectileTesting->Testing(); 
 
 	
-	
+ 	
 }
 
 

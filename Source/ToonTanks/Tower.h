@@ -88,9 +88,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float FireRange = 300.f; 
 
-	UFUNCTION()
-		void Rotate();
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		USoundBase* ProjectileSound; 
 

@@ -108,25 +108,6 @@ void ATower::ProcedesToLineTrace() {
 	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
 }
 
-void ATower::RotateMyTurret() {
-
-	FRotator TurretRotation = FRotator::ZeroRotator; 
-
-	float Speed = 400.f; 
-
-	float Time = UGameplayStatics::GetWorldDeltaSeconds(this); 
-
-	FVector TankRotation = Tank->GetActorLocation();
-
-	float Value = TankRotation.Z;
-
-	
-
-	TurretRotation.Yaw = Value * Speed;
-
-	AddActorLocalRotation(TurretRotation, true); 
-
-}
 
 void ATower::TowerAI() {
 
