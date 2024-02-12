@@ -13,6 +13,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Math/UnrealMathUtility.h"
 #include "Particles/ParticleSystem.h"
+#include "Engine/World.h"
 #include "Coin.h"
 #include "HealthComponent.h"
 #include "Projectile.h"

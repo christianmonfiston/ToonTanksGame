@@ -12,6 +12,8 @@
 #include "Sound/SoundBase.h"
 #include "Components/InputComponent.h"
 #include "Components/SphereComponent.h"
+#include "Engine/World.h"
+#include "Math/UnrealMathUtility.h"
 #include "Camera/CameraComponent.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
@@ -86,7 +88,7 @@ public:
 		float Distance;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		float FireRange = 300.f; 
+		float FireRange = 500.f; 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		USoundBase* ProjectileSound; 
@@ -95,4 +97,16 @@ public:
 
 	UFUNCTION()
 		void TowerAI(); 
+
+	UPROPERTY(EditAnywhere, Category = "Collision")
+		TEnumAsByte<ECollisionChannel> TraceChannelProperty = ECC_Pawn;
+
+
+	void RotateTurretAttack(FVector LookAtTarget); 
+
+	UFUNCTION()
+		void ProcedeToLineTraceByChannel(); 
+
+
+	
 };

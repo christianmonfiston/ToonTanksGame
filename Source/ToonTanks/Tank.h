@@ -11,6 +11,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "Math/UnrealMathUtility.h"
+#include "Engine/World.h"
 #include "Components/SphereComponent.h"
 #include "Projectile.h"
 #include "GameFramework/PlayerController.h"
