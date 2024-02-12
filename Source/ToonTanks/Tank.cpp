@@ -11,6 +11,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Sound/SoundBase.h"
 #include "Kismet/GameplayStatics.h"
+#include "Math/UnrealMathUtility.h"
 #include "Particles/ParticleSystem.h"
 #include "Coin.h"
 #include "HealthComponent.h"
@@ -29,12 +30,13 @@ ATank::ATank() {
 	MainCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Main Capsule")); 
 	MainCapsule->SetupAttachment(MainComponent);
 
+
 	SecondaryCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Secondary Capsule"));
 	SecondaryCapsule->SetupAttachment(MainCapsule);
 
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn")); 
-	ProjectileSpawnPoint->SetupAttachment(MainCapsule); 
+	ProjectileSpawnPoint->SetupAttachment(SecondaryCapsule); 
 
 
 	
@@ -91,6 +93,7 @@ void ATank::Tick(float DeltaTime) {
 		 PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, HitResult); 
 	 }
 
+	 RotateAttackTurret(HitResult.ImpactPoint);
 
 	 DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 50.f, 42.f, FColor::Orange); 
 
@@ -243,13 +246,18 @@ void ATank::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor*
 
 }
 
-void ATank::RotateTurret(FVector LookAtTarget) {
+void ATank::RotateAttackTurret(FVector LookAtTarget) {
 
 	FVector ToTarget = LookAtTarget - TankPrimaryMesh->GetComponentLocation();
 
 
-	FRotator LookAtRotation = FRotator(0.f,ToTarget.Rotation().Yaw, 0.f); 
-	TankPrimaryMesh->SetWorldRotation(LookAtRotation);
+	FRotator LookAtRotation = FRotator(0.f, ToTarget.Rotation().Yaw, 0.f);
+
+	float Time = UGameplayStatics::GetWorldDeltaSeconds(this);
+	float InterpSpeed = 25.f;
+
+
+	TankPrimaryMesh->SetWorldRotation(FMath::RInterpTo(TankPrimaryMesh->GetComponentRotation(), LookAtRotation, Time, InterpSpeed));
 
 
 }

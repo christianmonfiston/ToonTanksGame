@@ -119,7 +119,6 @@ void ATower::TowerAI() {
 			//RotateMyTurret();
 			Fire();
 		}
-
 	}
 }
 

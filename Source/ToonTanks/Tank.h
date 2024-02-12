@@ -10,6 +10,7 @@
 #include "Components/PrimitiveComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
+#include "Math/UnrealMathUtility.h"
 #include "Components/SphereComponent.h"
 #include "Projectile.h"
 #include "GameFramework/PlayerController.h"
@@ -160,7 +161,7 @@ public:
 
 public:
 	
-		void RotateTurret(FVector LookAtTarget);
+		void RotateAttackTurret(FVector LookAtTarget);
 
 		APlayerController* PlayerControllerRef; 
 
