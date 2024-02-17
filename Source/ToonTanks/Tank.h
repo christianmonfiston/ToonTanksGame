@@ -16,6 +16,8 @@
 #include "Projectile.h"
 #include "GameFramework/PlayerController.h"
 #include "Camera/CameraComponent.h"
+#include "Blueprint/UserWidget.h"
+#include "DisplayUI.h"
 #include "Sound/SoundBase.h"
 #include "Particles/ParticleSystem.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -165,5 +167,16 @@ public:
 		void RotateAttackTurret(FVector LookAtTarget);
 
 		APlayerController* PlayerControllerRef; 
+
+		UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		ACoin* CoinInScene; 
+
+public:
+		UPROPERTY(EditAnywhere)
+			TSubclassOf< class UDisplayUI> PlayerHUDclass;
+
+		UPROPERTY(EditAnywhere)
+			class UDisplayUI* PlayerHUD;
+
 
 };

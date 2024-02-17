@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeMainGameMode() {}
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_ToonTanks();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	TOONTANKS_API UClass* Z_Construct_UClass_ACoin_NoRegister();
 // End Cross Module References
 	void AMainGameMode::StaticRegisterNativesAMainGameMode()
 	{
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeMainGameMode() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BackgroundSound_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BackgroundSound;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Coin_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Coin;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -57,8 +62,16 @@ void EmptyLinkFunctionForGeneratedCodeMainGameMode() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainGameMode_Statics::NewProp_BackgroundSound = { "BackgroundSound", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainGameMode, BackgroundSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMainGameMode_Statics::NewProp_BackgroundSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainGameMode_Statics::NewProp_BackgroundSound_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainGameMode_Statics::NewProp_Coin_MetaData[] = {
+		{ "Category", "MainGameMode" },
+		{ "ModuleRelativePath", "MainGameMode.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainGameMode_Statics::NewProp_Coin = { "Coin", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainGameMode, Coin), Z_Construct_UClass_ACoin_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMainGameMode_Statics::NewProp_Coin_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainGameMode_Statics::NewProp_Coin_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainGameMode_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainGameMode_Statics::NewProp_BackgroundSound,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainGameMode_Statics::NewProp_Coin,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMainGameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMainGameMode>::IsAbstract,
@@ -96,9 +109,9 @@ void EmptyLinkFunctionForGeneratedCodeMainGameMode() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_MainGameMode_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMainGameMode, AMainGameMode::StaticClass, TEXT("AMainGameMode"), &Z_Registration_Info_UClass_AMainGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainGameMode), 3098534955U) },
+		{ Z_Construct_UClass_AMainGameMode, AMainGameMode::StaticClass, TEXT("AMainGameMode"), &Z_Registration_Info_UClass_AMainGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainGameMode), 299437054U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_MainGameMode_h_1153583431(TEXT("/Script/ToonTanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_MainGameMode_h_2680887704(TEXT("/Script/ToonTanks"),
 		Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_MainGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_MainGameMode_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

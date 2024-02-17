@@ -83,6 +83,9 @@
     <ClCompile Include="..\..\Source\ToonTanks\Private\Coin.cpp">
       <Filter>Source\ToonTanks\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ToonTanks\Private\DisplayUI.cpp">
+      <Filter>Source\ToonTanks\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ToonTanks\Private\HealthComponent.cpp">
       <Filter>Source\ToonTanks\Private</Filter>
     </ClCompile>
@@ -93,6 +96,9 @@
       <UniqueIdentifier>{BD39C560-7238-3778-B4C3-6A1CA3BFF8AE}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\ToonTanks\Public\Coin.h">
+      <Filter>Source\ToonTanks\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ToonTanks\Public\DisplayUI.h">
       <Filter>Source\ToonTanks\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ToonTanks\Public\HealthComponent.h">

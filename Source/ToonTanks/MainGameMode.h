@@ -39,6 +39,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class USoundBase* BackgroundSound; 
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		class ACoin* Coin; 
+
 	
 
 };

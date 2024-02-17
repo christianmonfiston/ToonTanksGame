@@ -12,6 +12,8 @@
 #include "Sound/SoundBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Math/UnrealMathUtility.h"
+#include "Blueprint/UserWidget.h"
+#include "DisplayUI.h"
 #include "Particles/ParticleSystem.h"
 #include "Engine/World.h"
 #include "Coin.h"
@@ -57,6 +59,9 @@ ATank::ATank() {
 	BoxComp->OnComponentBeginOverlap.AddDynamic(this, &ATank::OnComponentBeginOverlap); 
 
 
+	//PlayerHUD = nullptr;
+	//PlayerHUDclass = nullptr;
+
 	
 
 
@@ -74,6 +79,14 @@ void ATank::BeginPlay() {
 	//Fire(); 
 
 	PlayerControllerRef = Cast<APlayerController>(GetController());
+
+
+	//Create widget
+	PlayerHUD = CreateWidget<UDisplayUI>(PlayerControllerRef, PlayerHUDclass);
+
+
+	//Add widget at beginning of screen
+	PlayerHUD->AddToPlayerScreen();
 
 }
 
