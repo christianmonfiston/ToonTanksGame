@@ -302,7 +302,7 @@ void ATank::GamepadRotate(float AxisValue) {
 
 	TankTurnRate = 200.f;
 
-	FRotator DeltaRotation = FRotator::ZeroRotator;
+	FRotator DeltaRotation = TankMesh->GetComponentRotation();
 	float DeltaTime = UGameplayStatics::GetWorldDeltaSeconds(this);
 
 	DeltaRotation.Yaw = AxisValue * TankTurnRate * DeltaTime;
@@ -322,7 +322,7 @@ void ATank::GamepadRotateSecondaryMesh(float AxisValue) {
 
 	DeltaRotation.Yaw  = AxisValue * RotateSpeed * DeltaTime; 
 
-
+	AddActorLocalRotation(DeltaRotation, true);
 }
 
 
