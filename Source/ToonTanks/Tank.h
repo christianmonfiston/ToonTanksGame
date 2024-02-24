@@ -17,7 +17,6 @@
 #include "GameFramework/PlayerController.h"
 #include "Camera/CameraComponent.h"
 #include "Blueprint/UserWidget.h"
-#include "DisplayUI.h"
 #include "Sound/SoundBase.h"
 #include "Particles/ParticleSystem.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -171,12 +170,12 @@ public:
 		UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		ACoin* CoinInScene; 
 
-public:
-		UPROPERTY(EditAnywhere)
-			TSubclassOf< class UDisplayUI> PlayerHUDclass;
+		//Gamepad functions
+		void GamepadMoveForward(float AxisValue); 
+		void GamepadRotate(float AxisValue); 
+		void GamepadShoot(); 
+		void GamepadRotateSecondaryMesh(float AxisValue); 
 
-		UPROPERTY(EditAnywhere)
-			class UDisplayUI* PlayerHUD;
 
 
 };

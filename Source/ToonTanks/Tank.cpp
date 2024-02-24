@@ -13,7 +13,6 @@
 #include "Kismet/GameplayStatics.h"
 #include "Math/UnrealMathUtility.h"
 #include "Blueprint/UserWidget.h"
-#include "DisplayUI.h"
 #include "Particles/ParticleSystem.h"
 #include "Engine/World.h"
 #include "Coin.h"
@@ -81,13 +80,6 @@ void ATank::BeginPlay() {
 	PlayerControllerRef = Cast<APlayerController>(GetController());
 
 
-	//Create widget
-	PlayerHUD = CreateWidget<UDisplayUI>(PlayerControllerRef, PlayerHUDclass);
-
-
-	//Add widget at beginning of screen
-	PlayerHUD->AddToPlayerScreen();
-
 }
 
 void ATank::Tick(float DeltaTime) {
@@ -105,6 +97,7 @@ void ATank::Tick(float DeltaTime) {
 
 	 if (PlayerControllerRef) {
 		 PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility, false, HitResult); 
+		 
 	 }
 
 	 RotateAttackTurret(HitResult.ImpactPoint);
@@ -127,6 +120,11 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis("MoveForward", this, &ATank::MoveForward); 
 	PlayerInputComponent->BindAxis("Turn", this, &ATank::RotateTurret); 
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ATank::Fire);
+	//Gamepad Controller 
+	PlayerInputComponent->BindAxis("GamepadMoveForward", this, &ATank::GamepadMoveForward); 
+	PlayerInputComponent->BindAction("GamepadShoot", IE_Pressed, this, &ATank::GamepadShoot); 
+	PlayerInputComponent->BindAxis("GamepadRotate", this, &ATank::GamepadRotate); 
+	PlayerInputComponent->BindAxis("GamepadRotateSecondaryMesh", this , &ATank::GamepadRotateSecondaryMesh); 
 
 	   
 }
@@ -268,10 +266,61 @@ void ATank::RotateAttackTurret(FVector LookAtTarget) {
 	FRotator LookAtRotation = FRotator(0.f, ToTarget.Rotation().Yaw, 0.f);
 
 	float Time = UGameplayStatics::GetWorldDeltaSeconds(this);
-	float InterpSpeed = 25.f;
+	float InterpSpeed = 30.f;
 
 
 	TankPrimaryMesh->SetWorldRotation(FMath::RInterpTo(TankPrimaryMesh->GetComponentRotation(), LookAtRotation, Time, InterpSpeed));
+
+
+}
+
+void ATank::GamepadMoveForward(float AxisValue) {
+
+	float Speed = 1000.f;
+
+	FVector DeltaLocation = FVector::ZeroVector;
+
+	float DeltaTime = UGameplayStatics::GetWorldDeltaSeconds(this);
+
+	DeltaLocation.X = AxisValue * Speed * DeltaTime;
+
+	AddActorLocalOffset(DeltaLocation, true);
+
+
+
+}
+
+
+void ATank::GamepadShoot() {
+
+	Fire(); 
+}
+
+
+
+void ATank::GamepadRotate(float AxisValue) {
+
+	TankTurnRate = 200.f;
+
+	FRotator DeltaRotation = FRotator::ZeroRotator;
+	float DeltaTime = UGameplayStatics::GetWorldDeltaSeconds(this);
+
+	DeltaRotation.Yaw = AxisValue * TankTurnRate * DeltaTime;
+
+	AddActorLocalRotation(DeltaRotation, true);
+}
+
+
+void ATank::GamepadRotateSecondaryMesh(float AxisValue) {
+
+
+	float RotateSpeed = 200.f; 
+
+	FRotator DeltaRotation = TankPrimaryMesh->GetComponentRotation(); 
+
+	float DeltaTime = UGameplayStatics::GetWorldDeltaSeconds(this); 
+
+	DeltaRotation.Yaw  = AxisValue * RotateSpeed * DeltaTime; 
 
 
 }

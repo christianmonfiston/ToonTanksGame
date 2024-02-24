@@ -28,7 +28,6 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 	TOONTANKS_API UClass* Z_Construct_UClass_ACoin_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
-	TOONTANKS_API UClass* Z_Construct_UClass_UDisplayUI_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ATank::execOnComponentBeginOverlap)
 	{
@@ -506,14 +505,6 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CoinInScene_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_CoinInScene;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerHUDclass_MetaData[];
-#endif
-		static const UECodeGen_Private::FClassPropertyParams NewProp_PlayerHUDclass;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerHUD_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerHUD;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -726,21 +717,6 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_CoinInScene = { "CoinInScene", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATank, CoinInScene), Z_Construct_UClass_ACoin_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_CoinInScene_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_CoinInScene_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUDclass_MetaData[] = {
-		{ "Category", "Tank" },
-		{ "ModuleRelativePath", "Tank.h" },
-	};
-#endif
-	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUDclass = { "PlayerHUDclass", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATank, PlayerHUDclass), Z_Construct_UClass_UDisplayUI_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUDclass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUDclass_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUD_MetaData[] = {
-		{ "Category", "Tank" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Tank.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUD = { "PlayerHUD", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATank, PlayerHUD), Z_Construct_UClass_UDisplayUI_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUD_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUD_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATank_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_MainComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_MainCapsule,
@@ -767,8 +743,6 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_ProjectilePoint,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_Projectile,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_CoinInScene,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUDclass,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATank_Statics::NewProp_PlayerHUD,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATank_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATank>::IsAbstract,
@@ -806,9 +780,9 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 3122867178U) },
+		{ Z_Construct_UClass_ATank, ATank::StaticClass, TEXT("ATank"), &Z_Registration_Info_UClass_ATank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATank), 2706877318U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_3526435584(TEXT("/Script/ToonTanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_3906940047(TEXT("/Script/ToonTanks"),
 		Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ToonTanks_Source_ToonTanks_Tank_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
